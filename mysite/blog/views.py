@@ -10,3 +10,10 @@ def post_list(request):
 def post_detail(request, pk):
     post= get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post':post})
+
+def page_not_found_404(request, exception=404):
+    return render(
+        request,
+        "blog/404.html",
+        status=404,
+    )
